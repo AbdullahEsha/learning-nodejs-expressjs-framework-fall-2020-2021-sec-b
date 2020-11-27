@@ -47,59 +47,26 @@
 </nav>
 </section>
 <section>
-<div class="w3-container">
-      <div class="container" id="card">    
-      <table class="table table-hover" id="events" style="margin-top: 20%">
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Action</th>
-        </tr>
-
-        <% for(var i=0; i< userlist.length; i++ ){ %>
-        <tr id="rows">
-          <td><%= userlist[i].id %></td>
-          <td><%= userlist[i].name %></td>
-          <td><%= userlist[i].email %></td>
-          <td>
-            <a class="btn btn-dark" href="/admin/deleteCustomer/<%=userlist[i].id%>">Delete</a> 
-          </td>
-        </tr>
-        <% } %>
-
-      </table>
+<div class="container">
+  
+  <div class="card" style="width:400px">
+    <form method="post">
+      <div class="card-body">
+      <p class="card-text">Name: <%=customerlist[0].name%></p>
+      <p class="card-text">User Name: <%=customerlist[0].userName%></p>
+      <p class="card-text">Email: <%=customerlist[0].email%></p>
+      
+      <p class="card-text">Are You Sure that you want to delete this customer?</p>
+      <input class="btn btn-info" type="submit" name="submit" value="Confirm">
     </div>
+    </form>
   </div>
   <br>
-</section>
-<script>
-  $(document).ready(function(){
-       $('#search').keyup(function(){
-            search_table($(this).val());
-       });
-       function search_table(value){
-            $('#events #rows').each(function(){
-                 var found = 'false'; 
 
-                 $(this).each(function(){
-                      if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
-                      {
-                           found = 'true';
-                      }
-                 });
-                 if(found == 'true')
-                 {
-                      $(this).show();
-                 }
-                 else
-                 {
-                      $(this).hide();
-                 }
-            });
-       }
-  });
-</script>
+
+
+</section>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
