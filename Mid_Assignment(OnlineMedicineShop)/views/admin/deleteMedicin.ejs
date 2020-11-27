@@ -47,80 +47,25 @@
 </nav>
 </section>
 <section>
-<div class="w3-container">
-      <div class="container" id="card">    
-      <table class="table table-hover" id="events" style="margin-top: 20%">
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Vendor Name</th>
-          <th>Price</th>
-          <th>Segmentation</th>
-          <th>Genre</th>
-          <th>Amount</th>
-          <th>Availability</th>
-          <th>Action</th>
-        </tr>
-
-        <% for(var i=0; i< medicinlist.length; i++ ){ %>
-        <tr id="rows">
-          <td><%= medicinlist[i].id %></td>
-          <td><%= medicinlist[i].name %></td>
-          <td><%= medicinlist[i].vendorName %></td>
-          <td><%= medicinlist[i].price %></td>
-          <td><%= medicinlist[i].segmentation %></td>
-          <td><%= medicinlist[i].genre %></td>
-          <td><%= medicinlist[i].amount %></td>
-          <td><%= medicinlist[i].availability %></td>
-          <td>
-            <a class="btn btn-dark" href="/admin/editMedicin/<%=medicinlist[i].id%>">Edit</a> 
-            <a class="btn btn-info" href="/admin/deleteMedicin/<%=medicinlist[i].id%>">Delete</a> 
-          </td>
-        </tr>
-        <% } %>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><a class="btn btn-info" href="/admin/addMedicin">Adds</a></td>
-        </tr>
-
-      </table>
-    </div>
-  </div>
-  <br>
+<div class="container">
+  <div class="card" style="width:400px">
+   <form method="post">
+      <div class="card-body">
+      <h4 class="card-title"></h4>
+      <p class="card-text"> <%= medicinlist[i].id %></p>
+      <p class="card-text"> <%= medicinlist[i].name %></p>
+      <p class="card-text"> <%= medicinlist[i].vendorName %></p>
+      <p class="card-text"> <%= medicinlist[i].price %></p>
+      <p class="card-text"> <%= medicinlist[i].segmentation %></p>
+      <p class="card-text"> <%= medicinlist[i].genre %></p>
+      <p class="card-text"> <%= medicinlist[i].amount %></p>
+      <p class="card-text"> <%= medicinlist[i].availability %></p>
+      </div>
+          <input class="btn btn-info" type="submit" name="submit">
+       </div>
+    </form>
+  <br>    
 </section>
-<script>
-  $(document).ready(function(){
-       $('#search').keyup(function(){
-            search_table($(this).val());
-       });
-       function search_table(value){
-            $('#events #rows').each(function(){
-                 var found = 'false'; 
-
-                 $(this).each(function(){
-                      if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
-                      {
-                           found = 'true';
-                      }
-                 });
-                 if(found == 'true')
-                 {
-                      $(this).show();
-                 }
-                 else
-                 {
-                      $(this).hide();
-                 }
-            });
-       }
-  });
-</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

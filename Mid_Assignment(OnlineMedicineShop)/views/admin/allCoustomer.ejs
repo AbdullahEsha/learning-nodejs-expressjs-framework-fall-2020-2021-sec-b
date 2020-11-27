@@ -57,13 +57,13 @@
           <th>Action</th>
         </tr>
 
-        <% for(var i=0; i< userlist.length; i++ ){ %>
+        <% for(var i=0; i< customerlist.length; i++ ){ %>
         <tr id="rows">
-          <td><%= userlist[i].id %></td>
-          <td><%= userlist[i].name %></td>
-          <td><%= userlist[i].email %></td>
+          <td><%= customerlist[i].id %></td>
+          <td><%= customerlist[i].name %></td>
+          <td><%= customerlist[i].email %></td>
           <td>
-            <a class="btn btn-dark" href="/admin/deleteCustomer/<%=userlist[i].id%>">Delete</a> 
+            <a class="btn btn-dark" href="/admin/deleteCustomer/<%=customerlist[i].id%>">Delete</a> 
           </td>
         </tr>
         <% } %>
