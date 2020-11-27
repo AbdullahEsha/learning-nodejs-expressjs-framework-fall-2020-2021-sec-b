@@ -20,10 +20,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/customer/profile">My profile <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">My Profile<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="/logout">Logout</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,7 +37,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -45,6 +45,20 @@
     </form>
   </div>
 </nav>
+</section>
+<section>
+<div class="container">
+  <h2>I am <%=userlist[0].name%></h2>
+  <p>My email is.. <%=userlist[0].email%></p>
+  <div class="card" style="width:400px">
+    <img class="card-img-top" src="/assets/img/<%=userlist[0].image%>" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title"></h4>
+      <p class="card-text">User name.. <%=userlist[0].userName%></p>
+      <a href="/customer/editProfile" class="btn btn-primary">Edit Profile</a>
+    </div>
+  </div>
+  <br>
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

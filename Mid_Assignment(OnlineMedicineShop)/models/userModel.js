@@ -22,12 +22,20 @@ module.exports ={
 
 	},
 	updateUser: function(user, callback){
-		var sql= "UPDATE users SET name='"+user.name+"', username ='"+user.username +"',password ='"+user.password +"',image ='"+user.image +"', email='"+user.email +"' where id="+user.id;
+		var sql= "UPDATE users SET name='"+user.name+"', username ='"+user.userName +"',password ='"+user.password +"',image ='"+user.image +"', email='"+user.email +"' where id="+user.id;
+		//console.log(sql);
+		db.execute(sql, function(status){
+			callback(status);
+		});
+	},
+	getAll: function(user, callback){
+		var sql= "select * from users";
 		//console.log(sql);
 		db.execute(sql, function(status){
 			callback(status);
 		});
 	}
+	
 
 
 }

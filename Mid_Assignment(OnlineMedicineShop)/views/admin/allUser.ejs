@@ -20,10 +20,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/customer/profile">My profile <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">My Profile<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="/logout">Logout</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,6 +45,34 @@
     </form>
   </div>
 </nav>
+</section>
+<section>
+<div class="w3-container">
+      <div class="container" id="card">    
+      <table class="table table-hover" id="events" style="margin-top: 20%">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+
+        <% for(var i=0; i< userlist.length; i++ ){ %>
+        <tr id="rows">
+          <td><%= userlist[i].id %></td>
+          <td><%= userlist[i].name %></td>
+          <td><%= userlist[i].email %></td>
+          <td>
+            <a class="btn btn-dark" href="/userSupport/userEvents/<%=userlist[i].id%>">Events</a> 
+            <a class="btn btn-info" href="/userSupport/userDetails/<%=userlist[i].id%>">Details</a> 
+          </td>
+        </tr>
+        <% } %>
+
+      </table>
+    </div>
+  </div>
+  <br>
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
