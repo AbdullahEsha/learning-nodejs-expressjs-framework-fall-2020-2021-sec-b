@@ -46,10 +46,10 @@ router.post('/editProfile',(req,res)=>{
     }
   });
 });
-router.get('/allUser', (req, res)=>{
+router.get('/allCustomer', (req, res)=>{
   userModel.getAll(function(results){
     console.log(results);
-    res.render('admin/allUser', {userlist: results});
+    res.render('admin/allCustomer', {userlist: results});
   });
 });
 
