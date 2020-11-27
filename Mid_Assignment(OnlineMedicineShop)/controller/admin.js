@@ -52,5 +52,25 @@ router.get('/allCustomer', (req, res)=>{
     res.render('admin/allCustomer', {userlist: results});
   });
 });
+router.get('/deleteCustomer/:id', (req, res)=>{
+  var id = req.params.id.
+  userModel.getById(id,function(results){
+    console.log(results);
+    res.render('admin/deleteCustomer', {customerlist: results});
+  });
+});
+router.post('/deleteCustomer/id',(req,res)=>{
+  var id       : req.params.id;
+  
+  userModel.deleteUser(id,function(status){
+    if (status) {
+      res.redirect('/admin/allCustomer');
+    }else{
+      res.redirect('/admin/deleteCustomer?sql_error!!');
+    }
+  });
+});
+
+
 
 module.exports = router;

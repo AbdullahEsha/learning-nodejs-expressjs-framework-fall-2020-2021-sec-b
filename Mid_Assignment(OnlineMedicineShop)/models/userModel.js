@@ -34,6 +34,13 @@ module.exports ={
 		db.execute(sql, function(status){
 			callback(status);
 		});
+	},
+	deleteUser: function(id, callback){
+		var sql = "DELETE FROM users WHERE id="+id;
+        db.execute(sql, function(status){
+            callback(status);
+        });
+
 	}
 	
 

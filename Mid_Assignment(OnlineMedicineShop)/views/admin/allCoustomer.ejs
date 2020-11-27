@@ -41,7 +41,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" id="search">
     </form>
   </div>
 </nav>
@@ -73,7 +73,33 @@
   </div>
   <br>
 </section>
+<script>
+  $(document).ready(function(){
+       $('#search').keyup(function(){
+            search_table($(this).val());
+       });
+       function search_table(value){
+            $('#events #rows').each(function(){
+                 var found = 'false'; 
 
+                 $(this).each(function(){
+                      if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                      {
+                           found = 'true';
+                      }
+                 });
+                 if(found == 'true')
+                 {
+                      $(this).show();
+                 }
+                 else
+                 {
+                      $(this).hide();
+                 }
+            });
+       }
+  });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
