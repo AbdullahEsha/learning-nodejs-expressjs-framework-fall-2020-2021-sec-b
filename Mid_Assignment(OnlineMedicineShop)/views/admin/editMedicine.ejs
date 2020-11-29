@@ -48,21 +48,32 @@
 </section>
 
 <section>
-  <div class="container">
+  <div class="container" align="center">
   <div class="card" style="width:400px">
    <form method="post">
       <div class="card-body">
-      <h4 class="card-title"></h4>
-      <p class="card-text"> <input type="text" name="id" value="<%= medicinlist[i].id %>"></p>
-      <p class="card-text"> <input type="text" name="name" value="<%= medicinlist[i].name %>"></p>
-      <p class="card-text"> <input type="text" name="vendorName" value="<%= medicinlist[i].vendorName %>"></p>
-      <p class="card-text"> <input type="text" name="price" value="<%= medicinlist[i].price %>"></p>
-      <p class="card-text"> <input type="text" name="segmentation" value="<%= medicinlist[i].segmentation %>"></p>
-      <p class="card-text"> <input type="text" name="genre" value="<%= medicinlist[i].genre %>"></p>
-      <p class="card-text"> <input type="text" name="amount" value="<%= medicinlist[i].amount %>"></p>
-      <p class="card-text"> <input type="text" name="availability" value="<%= medicinlist[i].availability %>"></p>
+      <h2 class="card-title">Edit Medicine</h2>
+      <hr>
+      <h4 class="card-title">Name</h4>
+      <p class="card-text"> <input type="text" name="name" value="<%= medlist[0].name %>"></p>
+      <hr>
+      <h4 class="card-title">Vendor Name</h4>
+      <p class="card-text"> <input type="text" name="vendorName" value="<%= medlist[0].vendorName %>"></p>
+      <hr>
+      <h4 class="card-title">Price</h4>
+      <p class="card-text"> <input type="text" name="price" value="<%= medlist[0].price %>"></p>
+      <hr>
+      <h4 class="card-title">Segmentation</h4>
+      <p class="card-text"> <input type="text" name="segmentation" value="<%= medlist[0].segmentation %>"></p>
+      <hr>
+      <h4 class="card-title">Genre</h4>
+      <p class="card-text"> <input type="text" name="genre" value="<%= medlist[0].genre %>"></p>
+      <hr>
+      <h4 class="card-title">Amount</h4>
+      <p class="card-text"> <input type="text" name="amount" value="<%= medlist[0].amount %>"></p>
+      <hr>
       </div>
-          <input class="btn btn-info" type="submit" name="submit">
+          <input class="btn btn-info" type="submit" name="Confirm">
        </div>
     </form>
   <br> 

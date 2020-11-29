@@ -21,7 +21,13 @@ module.exports ={
         db.execute(sql, function(status){
             callback(status);
         });
-
+	},
+	update: function(user, callback){
+		var sql= "UPDATE medicineinfo SET name='"+user.name+"', vendorName ='"+user.vendorName +"',price ='"+user.price+"',segmentation ='"+user.segmentation +"', genre='"+user.genre +"', amount='"+user.amount +"' where id="+user.id;
+		//console.log(sql);
+		db.execute(sql, function(status){
+			callback(status);
+		});
 	}
 
 
