@@ -81,6 +81,27 @@ router.get('/allMedicine', (req, res)=>{
     res.render('admin/allMedicine', {medlist: results});
   });
 });
+
+router.get('/deleteMedicine/:id', (req, res)=>{
+  var data = req.params.id;
+  medicineModel.getAllById(data,function(results){
+    console.log("jkdsssssssssss");
+    console.log(results);
+    res.render('admin/deleteMedicine', {medlist: results});
+  });
+});
+
+router.post('/deleteMedicine/:id',(req,res)=>{
+  var data = req.params.id;
+  userModel.delete(data,function(status){
+    if (status) {
+      res.redirect('/admin/allMedicine');
+    }else{
+      res.redirect('/admin/deleteMedicine/:id?sql_error!!');
+    }
+  });
+});
+
  
 
 
