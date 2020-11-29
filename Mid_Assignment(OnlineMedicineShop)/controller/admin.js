@@ -1,5 +1,6 @@
 const express = require("express");
 const userModel = require.main.require("./models/userModel");
+const medicineModel = require.main.require("./models/medicineModel");
 const router = express.Router();
 
 router.get('/', (req, res)=>{
@@ -46,6 +47,7 @@ router.post('/editProfile',(req,res)=>{
     }
   });
 });
+
 router.get('/allCustomer', (req, res)=>{
   userModel.getAll(function(results){
     console.log(results);
@@ -70,6 +72,13 @@ router.post('/deleteCustomer/:id',(req,res)=>{
     }else{
       res.redirect('/admin/deleteCustomer/:id?sql_error!!');
     }
+  });
+});
+
+router.get('/allMedicine', (req, res)=>{
+  medicineModel.getAll(function(results){
+    console.log(results);
+    res.render('admin/allMedicine', {medlist: results});
   });
 });
  

@@ -31,7 +31,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/admin/allCustomer">All Customers</a>
-          <a class="dropdown-item" href="admin/allMedicin">All Medicine</a>
+          <a class="dropdown-item" href="/admin/allMedicine">All Medicine</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
@@ -41,15 +41,14 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+      <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search..." aria-label="Search">
     </form>
   </div>
 </nav>
-</section>
-<section>
+
 <div class="w3-container">
       <div class="container" id="card">    
-      <table class="table table-hover" id="events" style="margin-top: 20%">
+      <table class="table table-hover" id="events" style="margin-top: 5%">
         <tr>
           <th>Id</th>
           <th>Name</th>
@@ -62,19 +61,19 @@
           <th>Action</th>
         </tr>
 
-        <% for(var i=0; i< medicinlist.length; i++ ){ %>
+        <% for(var i=0; i< medlist.length; i++ ){ %>
         <tr id="rows">
-          <td><%= medicinlist[i].id %></td>
-          <td><%= medicinlist[i].name %></td>
-          <td><%= medicinlist[i].vendorName %></td>
-          <td><%= medicinlist[i].price %></td>
-          <td><%= medicinlist[i].segmentation %></td>
-          <td><%= medicinlist[i].genre %></td>
-          <td><%= medicinlist[i].amount %></td>
-          <td><%= medicinlist[i].availability %></td>
+          <td><%= medlist[i].id %></td>
+          <td><%= medlist[i].name %></td>
+          <td><%= medlist[i].vendorName %></td>
+          <td><%= medlist[i].price %></td>
+          <td><%= medlist[i].segmentation %></td>
+          <td><%= medlist[i].genre %></td>
+          <td><%= medlist[i].amount %></td>
+          <td><%= medlist[i].availability %></td>
           <td>
-            <a class="btn btn-dark" href="/admin/editMedicin/<%=medicinlist[i].id%>">Edit</a> 
-            <a class="btn btn-info" href="/admin/deleteMedicin/<%=medicinlist[i].id%>">Delete</a> 
+            <a class="btn btn-dark" href="/admin/editMedicine/<%=medlist[i].id%>">Edit</a> 
+            <a class="btn btn-info" href="/admin/deleteMedicine/<%=medlist[i].id%>">Delete</a> 
           </td>
         </tr>
         <% } %>
@@ -86,7 +85,8 @@
           <td></td>
           <td></td>
           <td></td>
-          <td><a class="btn btn-info" href="/admin/addMedicin">Adds</a></td>
+          <td></td>
+          <td align="center"><a class="btn btn-info" href="/admin/addMedicine">Add</a></td>
         </tr>
 
       </table>

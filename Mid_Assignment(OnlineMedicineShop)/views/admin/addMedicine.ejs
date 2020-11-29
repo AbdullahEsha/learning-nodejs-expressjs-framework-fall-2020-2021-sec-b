@@ -49,23 +49,26 @@
 <section>
 <div class="container">
   <div class="card" style="width:400px">
-    <img class="card-img-top" src="/assets/img/<%=userlist[0].image%>" style="width:100%">
-    <form method="post">
+   <form method="post">
       <div class="card-body">
       <h4 class="card-title"></h4>
-      <p class="card-text">Name:<input class="form-control mr-sm-2" type="text" name="name" value="<%=userlist[0].name%>"> </p>
-      <p class="card-text">User name:<input class="form-control mr-sm-2" type="text" name="userName" value="<%=userlist[0].userName%>"> </p>
-      <p class="card-text">Email: <input type="text" name="email" value="<%=userlist[0].email%>"></p>
-      <p class="card-text">Password: <input type="password" name="password" value="<%=userlist[0].password%>"></p>
-      <p class="card-text">Image: <input type="file" name="image" ></p>
-      <br>
-      <br>
-      <input class="btn btn-info" type="submit" name="submit" value="Confirm">
-    </div>
+      <p class="card-text"> <input type="text" name="id"></p>
+      <p class="card-text"> <input type="text" name="name" ></p>
+      <p class="card-text"> <input type="text" name="vendorName" ></p>
+      <p class="card-text"> <input type="text" name="price>" </p>
+      <p class="card-text"> <input type="text" name="segmentation" </p>
+      <p class="card-text"> <input type="text" name="genre" ></p>
+      <p class="card-text"> <input type="text" name="amount"  "></p>
+      <p class="card-text"> <input type="text" name="availability" "></p>
+      </div>
+          <input class="btn btn-info" type="submit" name="submit">
+       </div>
     </form>
-  </div>
-  <br>
+  <br>  
+          
 </section>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
