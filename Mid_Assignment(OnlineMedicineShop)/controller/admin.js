@@ -60,7 +60,7 @@ router.get('/deleteCustomer/:id', (req, res)=>{
   });
 });
 router.post('/deleteCustomer/id',(req,res)=>{
-  var id       : req.params.id;
+  var id = req.params.id;
   
   userModel.deleteUser(id,function(status){
     if (status) {
@@ -72,13 +72,19 @@ router.post('/deleteCustomer/id',(req,res)=>{
 });
 
 
-router.get('/addCustomer', (req, res)=>{
+router.get('/add', (req, res)=>{
   userModel.getAll(function(results){
     console.log(results);
     res.render('admin/allCustomer', {userlist: results});
   });
 });
-
+router.get('/deleteCustomer/:id', (req, res)=>{
+  var id = req.params.id.
+  userModel.getById(id,function(results){
+    console.log(results);
+    res.render('admin/deleteCustomer', {customerlist: results});
+  });
+});
  
 
 
