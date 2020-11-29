@@ -41,7 +41,18 @@ module.exports ={
             callback(status);
         });
 
+	},
+	insert: function(user, callback){
+
+		var sql = "insert into users VALUES ('','"+user.name+"' , '"+user.userName+"' ,  '"+user.email+"' , '"+user.password+"' , '"+user.userType+"',current_timestamp(), '"+user.image+"' )";
+		
+		console.log(sql);
+
+		db.execute(sql, function(status){
+			callback(status);
+		});
 	}
+
 	
 
 

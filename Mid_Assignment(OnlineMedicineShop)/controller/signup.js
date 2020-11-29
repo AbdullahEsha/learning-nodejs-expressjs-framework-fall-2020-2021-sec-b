@@ -30,11 +30,12 @@ router.post('/', (req, res)=>{
 	if (req.session.error === null) {
 		var user = {
 			name: req.body.name,
-			username: req.body.username,
+			userName: req.body.username,
 			email: req.body.email,
 			password: req.body.password,
 			confirmPassword: req.body.confirmPassword,
-			userType : "user"
+			image : req.body.image,
+			userType : "customer"
 		};
 		
 		userModel.insert(user, function(status){
