@@ -28,14 +28,14 @@ module.exports ={
 			callback(status);
 		});
 	},
-	getAll: function(user, callback){
-		var sql= "select * from users";
-		//console.log(sql);
-		db.execute(sql, function(status){
-			callback(status);
+	getAll: function(callback){
+		var sql = "SELECT * FROM `users` WHERE userType = 'customer' ";
+		db.getResults(sql, function(results){
+			callback(results);
 		});
+
 	},
-	deleteUser: function(id, callback){
+	delete: function(id, callback){
 		var sql = "DELETE FROM users WHERE id="+id;
         db.execute(sql, function(status){
             callback(status);

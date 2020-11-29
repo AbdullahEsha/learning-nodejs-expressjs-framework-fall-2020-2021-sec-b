@@ -49,40 +49,27 @@ router.post('/editProfile',(req,res)=>{
 router.get('/allCustomer', (req, res)=>{
   userModel.getAll(function(results){
     console.log(results);
-    res.render('admin/allCustomer', {userlist: results});
+    res.render('admin/allCustomer', {cuslist: results});
   });
 });
+
+
 router.get('/deleteCustomer/:id', (req, res)=>{
-  var id = req.params.id.
-  userModel.getById(id,function(results){
+  var data = req.params.id;
+  userModel.getById(data,function(results){
     console.log(results);
-    res.render('admin/deleteCustomer', {customerlist: results});
+    res.render('admin/deleteCustomer', {cuslist: results});
   });
 });
-router.post('/deleteCustomer/id',(req,res)=>{
-  var id = req.params.id;
-  
-  userModel.deleteUser(id,function(status){
+
+router.post('/deleteCustomer/:id',(req,res)=>{
+  var data = req.params.id;
+  userModel.delete(data,function(status){
     if (status) {
       res.redirect('/admin/allCustomer');
     }else{
-      res.redirect('/admin/deleteCustomer?sql_error!!');
+      res.redirect('/admin/deleteCustomer/:id?sql_error!!');
     }
-  });
-});
-
-
-router.get('/add', (req, res)=>{
-  userModel.getAll(function(results){
-    console.log(results);
-    res.render('admin/allCustomer', {userlist: results});
-  });
-});
-router.get('/deleteCustomer/:id', (req, res)=>{
-  var id = req.params.id.
-  userModel.getById(id,function(results){
-    console.log(results);
-    res.render('admin/deleteCustomer', {customerlist: results});
   });
 });
  
