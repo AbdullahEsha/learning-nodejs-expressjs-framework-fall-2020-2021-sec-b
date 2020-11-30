@@ -85,7 +85,6 @@ router.get('/allMedicine', (req, res)=>{
 router.get('/deleteMedicine/:id', (req, res)=>{
   var data = req.params.id;
   medicineModel.getAllById(data,function(results){
-    console.log("jkdsssssssssss");
     console.log(results);
     res.render('admin/deleteMedicine', {medlist: results});
   });
@@ -129,6 +128,31 @@ router.post('/editMedicine/:id',(req,res)=>{
     }
   });
 });
+
+router.get('/addMedicine', (req, res)=>{
+    res.render('admin/addMedicine');
+});
+
+router.post('/addMedicine/:id',(req,res)=>{
+  var user = {
+    name         : req.body.name,
+    vendorName   : req.body.vendorName,
+    price        : req.body.price,
+    segmentation : req.body.segmentation,
+    genre        : req.body.genre,
+    amount       : req.body.amount
+  }
+
+  medicineModel.insert(user,function(status){
+    if (status) {
+      res.redirect('/admin/allMedicine');
+    }else{
+      res.redirect('/admin/addMedicine/:id?sql_error!!');
+    }
+  });
+});
+
+
  
 
 

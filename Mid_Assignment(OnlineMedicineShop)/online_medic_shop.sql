@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2020 at 09:42 AM
+-- Generation Time: Nov 30, 2020 at 07:40 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `medicininfo`
+-- Table structure for table `medicineinfo`
 --
 
-CREATE TABLE `medicininfo` (
+CREATE TABLE `medicineinfo` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `vendorName` text NOT NULL,
@@ -39,11 +39,15 @@ CREATE TABLE `medicininfo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `medicininfo`
+-- Dumping data for table `medicineinfo`
 --
 
-INSERT INTO `medicininfo` (`id`, `name`, `vendorName`, `price`, `segmentation`, `genre`, `amount`, `availability`) VALUES
-(1, 'Some thing', 'Some thing', 123, 'Some thing', 'Some thing', 20, 'available');
+INSERT INTO `medicineinfo` (`id`, `name`, `vendorName`, `price`, `segmentation`, `genre`, `amount`, `availability`) VALUES
+(2, 'somethingSpacial', 'something', 200, 'something', 'something', 22, 'available'),
+(3, 'something ', 'something', 200, 'something', 'something', 22, 'available'),
+(4, 'something ', 'something', 200, 'something', 'something', 22, 'available'),
+(5, 'something ', 'something', 200, 'something', 'something', 22, 'available'),
+(6, 'something ', 'something', 200, 'something', 'something', 22, 'available');
 
 -- --------------------------------------------------------
 
@@ -67,19 +71,17 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `userName`, `email`, `password`, `userType`, `createdAt`, `image`) VALUES
-(1, 'isha', 'isha', 'xyz@gmail.com', '123', 'admin', '2020-11-18 13:28:19', 'user2.jpg'),
-(3, 'rimi', 'rimi', 'rimi@gmail.com', '123', 'customer', '2020-11-02 13:09:53', 'user4.png'),
 (5, 'shahriar', 'shahriar', 'shahriar@gmail.com', '123', 'customer', '2020-11-02 13:09:53', 'user.jpg'),
-(7, 'abdullah', 'abdullah', 'abdullah@gmail.com', '123', 'customer', '2020-11-10 09:31:56', 'user3.png');
+(8, 'isha', 'isha', 'isha@gmail.com', '123', 'admin', '2020-11-29 15:41:29', 'user2.jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `medicininfo`
+-- Indexes for table `medicineinfo`
 --
-ALTER TABLE `medicininfo`
+ALTER TABLE `medicineinfo`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -93,16 +95,16 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `medicininfo`
+-- AUTO_INCREMENT for table `medicineinfo`
 --
-ALTER TABLE `medicininfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `medicineinfo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

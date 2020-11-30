@@ -28,7 +28,14 @@ module.exports ={
 		db.execute(sql, function(status){
 			callback(status);
 		});
-	}
+	},
+	insert: function(user, callback){
+		var sql = "insert into medicineinfo VALUES ('','"+user.name+"' , '"+user.vendorName+"' ,  '"+user.price+"' , '"+user.segmentation+"' , '"+user.genre+"','"+user.amount+"','available' )";
+		console.log(sql);
+		db.execute(sql, function(status){
+			callback(status);
+		});
+	} 
 
 
 }
